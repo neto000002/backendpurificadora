@@ -8,7 +8,7 @@ if (!process.env.JWT_SECRET) {
 
 const express = require("express");
 const cors = require("cors");
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const { Pool } = require("pg");
 const { authenticateToken } = require("./middlewares/auth"); // Importamos el middleware de autenticación

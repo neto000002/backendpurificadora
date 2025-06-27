@@ -16,14 +16,14 @@ const { authenticateToken } = require("./middlewares/auth"); // Importamos el mi
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configuración de PostgreSQL
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "purificadora",
-  password: "1234",
-  port: 5432,
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
 });
+
 
 pool.connect()
   .then(() => console.log("✅ Conectado a PostgreSQL"))

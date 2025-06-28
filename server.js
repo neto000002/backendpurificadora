@@ -40,7 +40,7 @@ module.exports = { pool }; // Exportamos `pool` para usarlo en las rutas
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['https://purificadoradiamante.vercel.app'], // Reemplaza con tu dominio real de Vercel
+  origin: ['puri-one.vercel.app'], // Reemplaza con tu dominio real de Vercel
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));

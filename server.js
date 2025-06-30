@@ -27,10 +27,6 @@ const pool = new Pool({
   ssl: isRender ? { rejectUnauthorized: false } : false,
 });
 
-
-
-
-
 pool.connect()
   .then(() => console.log("✅ Conectado a PostgreSQL"))
   .catch((err) => console.error("❌ Error al conectar a PostgreSQL:", err));
@@ -40,10 +36,11 @@ module.exports = { pool }; // Exportamos `pool` para usarlo en las rutas
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['puri-one.vercel.app'], // Reemplaza con tu dominio real de Vercel
+  origin: ['https://puri-one.vercel.app'], // ✅ con https://
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
+
 
 
 // Importar rutas de los repartidores
